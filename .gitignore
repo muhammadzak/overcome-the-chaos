@@ -99,3 +99,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# exclude data from source control by default
+/data/
+!./data/raw/.gitkeep
