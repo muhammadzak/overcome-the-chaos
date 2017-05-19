@@ -1,8 +1,14 @@
 import requests
+import click
 
-
-
-def download_file(url, file):
-    print(dir(file))
+@click.command()
+@click.argument('url')
+@click.argument('filename', type=click.Path())
+def download_file(url, filename):
+    print('Downloading from {} to {}'.format(url, filename))
     response = requests.get(url)
-    return response.content
+    with open(filename,  'wb') as ofile:
+        ofile.write(response.content)
+
+if __name__ == '__main__':
+    download_file()

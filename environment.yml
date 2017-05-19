@@ -3,6 +3,5 @@ dependencies:
  - numpy
  - scipy
  - scikit-learn
- - luigi
  - jupyter
  - requests
