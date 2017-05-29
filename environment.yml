@@ -9,3 +9,5 @@ dependencies:
  - seaborn
  - click
  - openpyxl
+ - pip:
+   - watermark
