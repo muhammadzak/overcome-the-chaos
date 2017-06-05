@@ -1,0 +1,14 @@
+numpy
+matplotlib
+scipy
+scikit-learn
+jupyter
+requests
+pandas
+seaborn
+click
+openpyxl
+watermark
+engarde
+scikit-plot
+tqdm

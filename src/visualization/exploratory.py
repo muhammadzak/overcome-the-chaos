@@ -8,7 +8,7 @@ import sys
 
 sys.path.append('src')
 
-from data.preprocess import read_preprocessed_data
+from data import read_processed_data
 
 
 def exploratory_visualization(dframe):
@@ -21,7 +21,7 @@ def exploratory_visualization(dframe):
 def main(input_file, output_file):
     print('Plotting pairwise distribution...')
 
-    dframe = read_preprocessed_data(input_file)
+    dframe = read_processed_data(input_file)
     plot = exploratory_visualization(dframe)
     plot.savefig(output_file)
 

@@ -2,7 +2,7 @@
 
 IRIS_URL = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 
-all: data/processed/preprocessed.pickle reports/figures/exploratory.png
+all: data/processed/processed.pickle reports/figures/exploratory.png
 
 clean:
 	rm -f data/raw/*.csv
@@ -13,9 +13,11 @@ clean:
 data/raw/iris.csv:
 	python src/data/download.py $(IRIS_URL) $@
 	
-data/processed/preprocessed.pickle: data/raw/iris.csv
-		python src/data/preprocess.py $< $@ --excel data/processed/preprocessed.xlsx
+data/processed/processed.pickle: data/raw/iris.csv
+		python src/data/preprocess.py $< $@ --excel data/processed/processed.xlsx
 	
-reports/figures/exploratory.png: data/interim/labeled.pickle
+reports/figures/exploratory.png: data/processed/processed.pickle
 	python src/visualization/exploratory.py $< $@
 
+reports/evaluation.json: data/processed/processed.pickle
+	python src/evaluation/evaluate.py $@ $<
