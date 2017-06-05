@@ -11,3 +11,5 @@ dependencies:
  - openpyxl
  - pip:
    - watermark
+   - engarde
+   - scikit-plot
