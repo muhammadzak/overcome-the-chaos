@@ -1,13 +1,10 @@
-from collections import namedtuple
+import sys
+from pprint import pprint
 
 import numpy as np
-import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 from sklearn.model_selection import StratifiedKFold
 from tqdm import tqdm
-import sys
-import json
-from pprint import pprint
 
 sys.path.append('src')
 import os

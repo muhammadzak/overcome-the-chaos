@@ -1,11 +1,7 @@
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
-import scikitplot.plotters as skplt
-import matplotlib.pyplot as plt
-import numpy as np
 import pickle
-
 import sys
+
+from sklearn.ensemble import RandomForestClassifier
 
 sys.path.append('src')
 
@@ -24,11 +20,6 @@ class RandomForestModel(object):
         X = get_featues(dframe)
         y = get_label(dframe)
         self.clf.fit(X, y)
-
-    def plot_learning_curve(self, dframe):
-        X = get_featues(dframe)
-        y = get_label(dframe)
-        return skplt.plot_learning_curve(self.clf, X, y)
 
     def predict(self, X):
         y_pred = self.clf.predict(X)
