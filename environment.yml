@@ -12,3 +12,6 @@ dependencies:
  - pip:
    - watermark
    - pytest
+   - flask-restful
+   - scikit-plot
+   - nose

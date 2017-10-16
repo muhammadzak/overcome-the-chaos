@@ -1,12 +1,8 @@
-from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score
-import scikitplot.plotters as skplt
-from sklearn.multiclass import OneVsOneClassifier
-import matplotlib.pyplot as plt
-import numpy as np
 import pickle
-
 import sys
+
+from sklearn.multiclass import OneVsOneClassifier
+from sklearn.svm import SVC
 
 sys.path.append('src')
 
@@ -25,11 +21,6 @@ class SVMModel(object):
         X = get_featues(dframe)
         y = get_label(dframe)
         self.clf.fit(X, y)
-
-    def plot_learning_curve(self, dframe):
-        X = get_featues(dframe)
-        y = get_label(dframe)
-        return skplt.plot_learning_curve(self.clf, X, y)
 
     def predict(self, X):
         y_pred = self.clf.predict(X)
